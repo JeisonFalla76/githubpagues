@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sala de Juegos Villa Slot | Tragamonedas Premium</title>
+
+  <!-- Fuentes elegantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- SEO básico -->
+  <meta name="description" content="Sala de Juegos Villa Slot: tragamonedas de última generación, diversión y premios. ¡Visítanos y vive la emoción del juego!">
+  <meta name="keywords" content="tragamonedas, casino, juegos, premios, jackpot, villa slot, lima, perú">
+  <meta name="theme-color" content="#141026">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎰</text></svg>">
+
+  <style>
+    /* Reset y base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --neon-pink: #ff00ff;
+      --neon-blue: #00ffff;
+      --neon-green: #39ff14;
+      --neon-purple: #bf00ff;
+      --neon-yellow: #ffff00;
+      --dark-bg: #141026;
+      --dark-card: #1e1838;
+      --text-light: #ffffff;
+      --text-muted: #b8b5c5;
+      --transition: all 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Efecto de partículas */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Burbujas de fondo */
+    .bubbles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .burbuja {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateY(-100px) translateX(50px) scale(1.5);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-200px) translateX(100px) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* Tipografía elegante */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    /* Navbar elegante */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(20, 16, 38, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.8rem 0;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      background: rgba(20, 16, 38, 0.98);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      animation: neonPulse 3s infinite alternate;
+    }
+
+    .brand-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .menu a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: var(--transition);
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--neon-pink);
+      transition: var(--transition);
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
+
+    .menu a:hover {
+      color: var(--neon-pink);
+    }
+
+    .btn-cta {
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: var(--transition);
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(191, 0, 255, 0.5);
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.7);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--text-light);
+      margin: 2px 0;
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    /* Hero section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-content {
+      flex: 1;
+      padding-right: 2rem;
+    }
+
+    .neon-title {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 
+        0 0 5px var(--neon-pink),
+        0 0 10px var(--neon-pink),
+        0 0 15px var(--neon-pink),
+        0 0 20px var(--neon-purple),
+        0 0 35px var(--neon-purple),
+        0 0 40px var(--neon-purple);
+      animation: neonPulse 2s infinite alternate;
+      line-height: 1.1;
+    }
+
+    .neon-title span {
+      color: var(--neon-blue);
+      text-shadow: 
+        0 0 5px var(--neon-blue),
+        0 0 10px var(--neon-blue),
+        0 0 15px var(--neon-blue),
+        0 0 20px var(--neon-blue),
+        0 0 35px var(--neon-blue),
+        0 0 40px var(--neon-blue);
+    }
+
+    @keyframes neonPulse {
+      from {
+        text-shadow: 
+          0 0 5px var(--neon-pink),
+          0 0 10px var(--neon-pink),
+          0 0 15px var(--neon-pink),
+          0 0 20px var(--neon-purple);
+      }
+      to {
+        text-shadow: 
+          0 0 10px var(--neon-pink),
+          0 0 20px var(--neon-pink),
+          0 0 30px var(--neon-pink),
+          0 0 40px var(--neon-purple),
+          0 0 50px var(--neon-purple),
+          0 0 75px var(--neon-purple);
+      }
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 2px solid var(--neon-blue);
+      color: var(--neon-blue);
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .btn.ghost:hover {
+      background: rgba(0, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    }
+
+    .btn:not(.ghost) {
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+      color: white;
+      box-shadow: 0 0 15px rgba(191, 0, 255, 0.5);
+    }
+
+    .btn:not(.ghost):hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.7);
+    }
+
+    .hero-image {
+      flex: 1;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: var(--transition);
+      transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+    }
+
+    .hero-image:hover img {
+      transform: perspective(1000px) rotateY(0) rotateX(0);
+      box-shadow: 
+        0 0 20px rgba(255, 0, 255, 0.5),
+        0 0 40px rgba(255, 0, 255, 0.3);
+    }
+
+    /* Secciones generales */
+    .section {
+      padding: 5rem 2rem;
+      position: relative;
+    }
+
+    .section.alt {
+      background: rgba(30, 24, 56, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+      border-radius: 3px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--dark-card);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-purple));
+      background-size: 400%;
+      border-radius: 16px;
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes glowing {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--neon-blue);
+    }
+
+    .card p {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: rgba(0, 255, 255, 0.1);
+      color: var(--neon-blue);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--neon-blue);
+    }
+
+    /* Animación jackpot especial */
+    .jackpot-animation {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jackpot-animation::after {
+      content: '🎰';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      font-size: 1.5rem;
+      animation: jackpotFloat 5s infinite linear;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    @keyframes jackpotFloat {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(100px) translateX(100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Layout de columnas */
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .col.text {
+      padding-right: 2rem;
+    }
+
+    .col.media {
+      position: relative;
+    }
+
+    /* Features list */
+    .features {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .features li {
+      margin-bottom: 0.8rem;
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .features li::before {
+      content: '✓';
+      color: var(--neon-green);
+      font-weight: bold;
+      margin-right: 0.8rem;
+      text-shadow: 0 0 5px var(--neon-green);
+    }
+
+    /* Image stack */
+    .image-stack {
+      position: relative;
+    }
+
+    .stack-main,
+    .stack-secondary {
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: var(--transition);
+    }
+
+    .stack-main {
+      width: 85%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stack-secondary {
+      width: 60%;
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      z-index: 1;
+      transform: rotate(3deg);
+    }
+
+    .image-stack:hover .stack-main {
+      transform: rotate(-2deg);
+    }
+
+    .image-stack:hover .stack-secondary {
+      transform: rotate(5deg) translateY(-5px);
+    }
+
+    /* Servicios */
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .servicio-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(30, 24, 56, 0.5);
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+
+    .servicio-item:hover {
+      transform: translateY(-5px);
+      background: rgba(30, 24, 56, 0.8);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .servicio-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .servicio-item h3 {
+      color: var(--neon-blue);
+      margin-bottom: 1rem;
+    }
+
+    .servicio-item p {
+      color: var(--text-muted);
+    }
+
+    /* Métodos de pago */
+    .metodos-pago {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .metodo-pago {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      background: rgba(30, 24, 56, 0.5);
+      border-radius: 10px;
+      min-width: 100px;
+      transition: var(--transition);
+    }
+
+    .metodo-pago:hover {
+      transform: translateY(-5px);
+      background: rgba(30, 24, 56, 0.8);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .metodo-pago-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .metodo-pago span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Horarios */
+    .horarios {
+      background: var(--dark-card);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    .horarios h3 {
+      color: var(--neon-yellow);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 5px var(--neon-yellow);
+    }
+
+    .horario-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .horario-item:last-child {
+      border-bottom: none;
+    }
+
+    .horario-dias {
+      font-weight: 500;
+    }
+
+    .horario-horas {
+      color: var(--neon-green);
+      font-weight: 600;
+      text-shadow: 0 0 3px var(--neon-green);
+    }
+
+    /* Galería */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 0;
+    }
+
+    .gallery-img-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      height: 250px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .gallery-img-container:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-img-container:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-view-btn {
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 0 15px rgba(191, 0, 255, 0.5);
+    }
+
+    .gallery-view-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(191, 0, 255, 0.7);
+    }
+
+    .gallery figcaption {
+      text-align: center;
+      padding: 1rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Info items */
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-icon {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .info-content h4 {
+      color: var(--neon-blue);
+      margin-bottom: 0.3rem;
+    }
+
+    .info-content p {
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Mapa */
+    .map {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      height: 400px;
+    }
+
+    /* Contacto */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      background: rgba(30, 24, 56, 0.5);
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+      background: rgba(30, 24, 56, 0.8);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-details h4 {
+      color: var(--neon-blue);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-details a,
+    .contact-details p {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-details a:hover {
+      color: var(--neon-pink);
+    }
+
+    .contact-cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn.large {
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark-card);
+      padding: 4rem 2rem 2rem;
+      position: relative;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand .brand {
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      max-width: 300px;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-column h4 {
+      color: var(--neon-blue);
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-column h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--neon-blue);
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 0.8rem;
+      transition: var(--transition);
+    }
+
+    .footer-column a:hover {
+      color: var(--neon-pink);
+      transform: translateX(5px);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    /* WhatsApp flotante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #25d366, #128c7e);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+      z-index: 100;
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.7);
+    }
+
+    .whatsapp-float span {
+      font-size: 2rem;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* Utilidades */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .elevate {
+      transition: var(--transition);
+    }
+
+    .elevate:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .cols {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .col.text {
+        padding-right: 0;
+      }
+      
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+      }
+      
+      .hero-content {
+        padding-right: 0;
+        margin-bottom: 3rem;
+      }
+      
+      .hero-cta {
+        justify-content: center;
+      }
+      
+      .neon-title {
+        font-size: 2.8rem;
+      }
+      
+      .metodos-pago {
+        gap: 1rem;
+      }
+      
+      .metodo-pago {
+        min-width: 80px;
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark-bg);
+        flex-direction: column;
+        padding: 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: var(--transition);
+      }
+      
+      .menu.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .section {
+        padding: 4rem 1.5rem;
+      }
+      
+      .neon-title {
+        font-size: 2.2rem;
+      }
+      
+      .metodos-pago {
+        gap: 0.8rem;
+      }
+      
+      .metodo-pago {
+        min-width: 70px;
+        padding: 0.6rem;
+      }
+      
+      .metodo-pago-icon {
+        font-size: 1.5rem;
+      }
+      
+      .metodo-pago span {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+      
+      .metodos-pago {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+      }
+      
+      .horario-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Burbujas de fondo -->
+  <div class="bubbles" aria-hidden="true"></div>
+
+  <!-- Efecto de partículas -->
+  <div id="particles-js"></div>
+
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="brand">
+        <span class="logo">🎰</span>
+        <span class="brand-text">Villa Slot</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#promos">Promociones</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/51999999999" target="_blank" class="btn-cta">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1 class="neon-title">Sala de Juegos <span>Villa Slot</span></h1>
+      <p class="lead">Experimenta la emoción de las tragamonedas de última generación en un ambiente exclusivo y seguro. Grandes premios te esperan.</p>
+      <div class="hero-cta">
+        <a href="#promos" class="btn">🏆 Ver Promociones</a>
+        <a href="#ubicacion" class="btn ghost">📍 ¿Cómo llegar?</a>
+      </div>
+    </div>
+
+    <!-- Imagen del local (placeholder) -->
+    <div class="hero-image">
+      <img src="imagenes/VillaSlot.webp" alt="Interior de Sala de Juegos Villa Slot" id="hero-img">
+    </div>
+  </section>
+
+  <!-- Promos -->
+  <section id="promos" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Promociones Exclusivas</h2>
+        <p class="section-subtitle">Aprovecha nuestras ofertas especiales y aumenta tus oportunidades de ganar</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-icon">🕔</div>
+          <h3>Happy Hour VIP</h3>
+          <p>Disfruta del doble de puntos todos los días de <strong>5:00 PM a 7:00 PM</strong></p>
+          <span class="tag">2x Puntos</span>
+        </article>
+        <article class="card reveal jackpot-animation">
+          <div class="card-icon">🎁</div>
+          <h3>Sorteos Especiales</h3>
+          <p>Participa cada jueves en nuestro gran sorteo con tickets acumulados</p>
+          <span class="tag">Premios Sorpresa</span>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🔄</div>
+          <h3>Máquinas Nuevas</h3>
+          <p>Disfruta de nuestros equipos con bonos progresivos y juegos exclusivos</p>
+          <span class="tag">Novedad</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presentación -->
+  <section class="section alt">
+    <div class="container cols">
+      <div class="col text reveal">
+        <div class="section-header">
+          <h2 class="section-title">Experiencia Premium</h2>
+          <p class="section-subtitle">Disfruta del mejor ambiente de juego en Lima</p>
+        </div>
+        <p>En <strong>Villa Slot</strong> hemos creado un espacio exclusivo donde la diversión y el entretenimiento se combinan con la más avanzada tecnología en tragamonedas. Nuestro compromiso es ofrecerte una experiencia única con el máximo confort y seguridad.</p>
+        <ul class="features">
+          <li>🏆 Jackpots progresivos con premios extraordinarios</li>
+          <li>❄️ Ambiente climatizado con sistema de purificación de aire</li>
+          <li>👥 Atención personalizada y servicio de calidad</li>
+          <li>🎁 Promociones diarias y programas de fidelidad</li>
+          <li>🔐 Seguridad las 24 horas con circuito cerrado</li>
+        </ul>
+      </div>
+      <div class="col media reveal">
+        <div class="image-stack">
+          <img src="sala-principal.jpg" alt="Sala principal de Villa Slot" class="elevate stack-main" id="sala-img">
+          <img src="maquinas-detalle.jpg" alt="Máquinas tragamonedas" class="elevate stack-secondary" id="maquinas-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Servicios Exclusivos</h2>
+        <p class="section-subtitle">Todo lo que necesitas para una experiencia de juego incomparable</p>
+      </div>
+      <div class="servicios reveal">
+        <div class="servicio-item">
+          <div class="servicio-icon">🎰</div>
+          <h3>Tragamonedas Premium</h3>
+          <p>Máquinas de última generación con múltiples líneas de pago y pantallas HD</p>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">💎</div>
+          <h3>Zona VIP</h3>
+          <p>Área exclusiva con máquinas especiales y atención personalizada</p>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">☕</div>
+          <h3>Bar & Cafetería</h3>
+          <p>Bebidas premium y snacks gourmet para disfrutar sin interrupciones</p>
+        </div>
+        <div class="servicio-item">
+          <div class="servicio-icon">🎁</div>
+          <h3>Programa de Fidelidad</h3>
+          <p>Acumula puntos y canjéalos por premios increíbles y beneficios exclusivos</p>
+        </div>
+      </div>
+      
+      <!-- Métodos de pago -->
+      <div class="section-header reveal">
+        <h3 class="section-title">Métodos de Pago</h3>
+        <p class="section-subtitle">Aceptamos diversas formas de pago para tu comodidad</p>
+      </div>
+      <div class="metodos-pago reveal">
+        <div class="metodo-pago">
+          <div class="metodo-pago-icon">💵</div>
+          <span>Efectivo</span>
+        </div>
+        <div class="metodo-pago">
+          <div class="metodo-pago-icon">💳</div>
+          <span>Visa</span>
+        </div>
+        <div class="metodo-pago">
+          <div class="metodo-pago-icon">💳</div>
+          <span>Mastercard</span>
+        </div>
+        <div class="metodo-pago">
+          <div class="metodo-pago-icon">📱</div>
+          <span>Yape</span>
+        </div>
+        <div class="metodo-pago">
+          <div class="metodo-pago-icon">💎</div>
+          <span>Tarjetas</span>
+        </div>
+      </div>
+      
+      <!-- Horarios actualizados -->
+      <div class="horarios reveal">
+        <h3>🕐 Horarios de Atención</h3>
+        <div class="horario-item">
+          <span class="horario-dias">Domingo a Jueves:</span>
+          <span class="horario-horas">7:00 AM - 1:00 AM</span>
+        </div>
+        <div class="horario-item">
+          <span class="horario-dias">Viernes:</span>
+          <span class="horario-horas">7:00 AM - 2:00 AM</span>
+        </div>
+        <div class="horario-item">
+          <span class="horario-dias">Sábados:</span>
+          <span class="horario-horas">24 Horas</span>
+        </div>
+        <div class="horario-item">
+          <span class="horario-dias">Happy Hour:</span>
+          <span class="horario-horas">5:00 PM - 7:00 PM</span>
+        </div>
+        <div class="horario-item">
+          <span class="horario-dias">Sorteos:</span>
+          <span class="horario-horas">Jueves 8:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="section alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestro Ambiente</h2>
+        <p class="section-subtitle">Conoce nuestras instalaciones de primer nivel</p>
+      </div>
+      <div class="gallery reveal">
+        <figure>
+          <div class="gallery-img-container">
+            <img src="zona-premium.jpg" alt="Zona Premium" id="zona-premium-img">
+            <div class="gallery-overlay">
+              <button class="gallery-view-btn">Ver más</button>
+            </div>
+          </div>
+          <figcaption>Área VIP con las mejores máquinas</figcaption>
+        </figure>
+        <figure>
+          <div class="gallery-img-container">
+            <img src="jackpot.jpg" alt="Jackpot" id="jackpot-img">
+            <div class="gallery-overlay">
+              <button class="gallery-view-btn">Ver más</button>
+            </div>
+          </div>
+          <figcaption>Máquinas con bonos progresivos</figcaption>
+        </figure>
+        <figure>
+          <div class="gallery-img-container">
+            <img src="tecnologia.jpg" alt="Tecnología" id="tecnologia-img">
+            <div class="gallery-overlay">
+              <button class="gallery-view-btn">Ver más</button>
+            </div>
+          </div>
+          <figcaption>Tecnología de última generación</figcaption>
+        </figure>
+        <figure>
+          <div class="gallery-img-container">
+            <img src="ambiente.jpg" alt="Ambiente" id="ambiente-img">
+            <div class="gallery-overlay">
+              <button class="gallery-view-btn">Ver más</button>
+            </div>
+          </div>
+          <figcaption>Espacio cómodo y moderno</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación -->
+  <section id="ubicacion" class="section">
+    <div class="container cols">
+      <div class="col text reveal">
+        <div class="section-header">
+          <h2 class="section-title">Nuestra Ubicación</h2>
+          <p class="section-subtitle">Visítanos y descubre la mejor experiencia de juego</p>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-content">
+            <h4>Dirección</h4>
+            <p>Av. Villa María 572, Villa María del Triunfo 15809, Lima, Perú</p>
+            <p style="font-size: 0.9em; margin-top: 5px; color: var(--neon-yellow);">Media cuadra antes del mercado San Francisco</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🕒</div>
+          <div class="info-content">
+            <h4>Horarios</h4>
+            <p>Domingo a Jueves: 7:00 AM - 1:00 AM</p>
+            <p>Viernes: 7:00 AM - 2:00 AM</p>
+            <p>Sábados: 24 Horas</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🚗</div>
+          <div class="info-content">
+            <h4>Estacionamiento</h4>
+            <p>Disponible gratuito para clientes</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🚌</div>
+          <div class="info-content">
+            <h4>Transporte</h4>
+            <p>Cerca de paraderos principales y estaciones</p>
+          </div>
+        </div>
+      </div>
+      <div class="col map reveal">
+        <!-- Mapa de Google Maps -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.218389425648!2d-76.94162392501937!3d-12.10001508812157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7a56e12b33f%3A0x4a1e8765e6b4480!2sAv.%20Villa%20Mar%C3%ADa%20572%2C%20Villa%20Mar%C3%ADa%20del%20Triunfo%2015809!5e0!3m2!1ses!2spe!4v1710000000000!5m2!1ses!2spe" width="100%" height="400" style="border-radius:16px;border:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section alt">
+    <div class="container">
+      <div class="contact reveal">
+        <div class="section-header">
+          <h2 class="section-title">Contáctanos</h2>
+          <p class="section-subtitle">Estamos aquí para responder todas tus consultas</p>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-details">
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/51999999999" target="_blank">+51 999 999 999</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:contacto@villaslot.pe">contacto@villaslot.pe</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-details">
+              <h4>Dirección</h4>
+              <p>Av. Villa María 572, VMT, Lima</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕒</div>
+            <div class="contact-details">
+              <h4>Horario</h4>
+              <p>Domingo a Jueves: 7:00 AM - 1:00 AM</p>
+              <p>Viernes: 7:00 AM - 2:00 AM</p>
+              <p>Sábados: 24 Horas</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <a href="https://wa.me/51999999999" target="_blank" class="btn large">💬 Escríbenos por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="logo">🎰</span>
+          <span class="brand-text">Villa Slot</span>
+        </div>
+        <p>La mejor experiencia en tragamonedas de Lima</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Enlaces Rápidos</h4>
+          <a href="#inicio">Inicio</a>
+          <a href="#promos">Promociones</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#ubicacion">Ubicación</a>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <a href="#">Términos y Condiciones</a>
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Juego Responsable</a>
+        </div>
+        <div class="footer-column">
+          <h4>Horarios</h4>
+          <p>Dom-Jue: 7:00 AM - 1:00 AM</p>
+          <p>Viernes: 7:00 AM - 2:00 AM</p>
+          <p>Sábados: 24 Horas</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2025</span> Sala de Juegos Villa Slot — Todos los derechos reservados</p>
+      <p style="font-size: 0.9em; opacity: 0.7; margin-top: 5px;">🎰 Juega responsablemente • Solo para mayores de 18 años</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/51999999999" target="_blank" aria-label="WhatsApp" title="¡Contáctanos por WhatsApp!">
+    <span>💬</span>
+  </a>
+
+  <!-- Script para partículas -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Inicialización de partículas
+    document.addEventListener('DOMContentLoaded', function() {
+      // Configuración de partículas
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: true,
+                value_area: 800
+              }
+            },
+            color: {
+              value: ["#ff00ff", "#00ffff", "#39ff14", "#bf00ff"]
+            },
+            shape: {
+              type: "circle",
+            },
+            opacity: {
+              value: 0.5,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+              }
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 2,
+                size_min: 0.3,
+                sync: false
+              }
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: "#00ffff",
+              opacity: 0.4,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 1,
+              direction: "none",
+              random: true,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+            }
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: {
+                enable: true,
+                mode: "grab"
+              },
+              onclick: {
+                enable: true,
+                mode: "push"
+              },
+              resize: true
+            },
+            modes: {
+              grab: {
+                distance: 140,
+                line_linked: {
+                  opacity: 1
+                }
+              },
+              push: {
+                particles_nb: 4
+              }
+            }
+          },
+          retina_detect: true
+        });
+      }
+
+      // Crear burbujas de fondo
+      function crearBurbujas() {
+        const bubblesContainer = document.querySelector('.bubbles');
+        if (!bubblesContainer) return;
+        
+        for (let i = 0; i < 15; i++) {
+          const burbuja = document.createElement('div');
+          burbuja.classList.add('burbuja');
+          
+          // Tamaño aleatorio
+          const size = Math.random() * 30 + 10;
+          burbuja.style.width = `${size}px`;
+          burbuja.style.height = `${size}px`;
+          
+          // Posición aleatoria
+          burbuja.style.left = `${Math.random() * 100}%`;
+          burbuja.style.top = `${Math.random() * 100}%`;
+          
+          // Retraso de animación aleatorio
+          burbuja.style.animationDelay = `${Math.random() * 15}s`;
+          burbuja.style.animationDuration = `${Math.random() * 10 + 15}s`;
+          
+          bubblesContainer.appendChild(burbuja);
+        }
+      }
+      
+      crearBurbujas();
+
+      // Año actual en el footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Navegación móvil
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+      
+      if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function() {
+          this.classList.toggle('active');
+          menu.classList.toggle('active');
+          this.setAttribute('aria-expanded', this.classList.contains('active'));
+        });
+      }
+
+      // Cerrar menú al hacer clic en un enlace
+      const menuLinks = document.querySelectorAll('.menu a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          menuToggle.classList.remove('active');
+          menu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Navbar con scroll
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+      }
+
+      // Animación de revelado al hacer scroll
+      const revealElements = document.querySelectorAll('.reveal');
+      
+      function checkReveal() {
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150;
+        
+        revealElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          
+          if (elementTop < windowHeight - revealPoint) {
+            element.classList.add('active');
+          }
+        });
+      }
+      
+      // Verificar al cargar y al hacer scroll
+      window.addEventListener('load', checkReveal);
+      window.addEventListener('scroll', checkReveal);
+      
+      // Inicializar la verificación al cargar
+      checkReveal();
+
+      // Efecto de escritura para el título (opcional)
+      const neonTitle = document.querySelector('.neon-title');
+      if (neonTitle) {
+        const originalText = neonTitle.textContent;
+        neonTitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = setInterval(function() {
+          if (i < originalText.length) {
+            neonTitle.textContent += originalText.charAt(i);
+            i++;
+          } else {
+            clearInterval(typeWriter);
+          }
+        }, 100);
+      }
+
+      // Smooth scroll para enlaces internos
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Efectos de hover mejorados para las cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Efecto de parallax en el hero
+      const heroImage = document.querySelector('.hero-image img');
+      if (heroImage) {
+        window.addEventListener('scroll', function() {
+          const scrolled = window.pageYOffset;
+          const rate = scrolled * -0.5;
+          heroImage.style.transform = `perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(${rate}px)`;
+        });
+      }
+
+      // Preload de imágenes importantes
+      const imagesToPreload = [
+        'imagenes/VillaSlot.webp',
+        'sala-principal.jpg',
+        'maquinas-detalle.jpg',
+        'zona-premium.jpg',
+        'jackpot.jpg',
+        'tecnologia.jpg',
+        'ambiente.jpg'
+      ];
+      
+      imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+
+      console.log('Villa Slot - Sala de juegos premium cargada correctamente');
+    });
+  </script>
+</body>
+</html>
